@@ -69,12 +69,17 @@ cardInput.addEventListener("click",(e) => {
     if(e.target.nodeName !== "A"){
         return;
     }
+    if(txt.value.trim() == ""){
+        alert("請輸入文字");
+        return;
+    }
     let obj ={};
     obj.content = txt.value;
     obj.state = "待完成";
     obj.check = "";
     data.push(obj);
     render();
+    txt.value = "";
 })
 
 // 分類
